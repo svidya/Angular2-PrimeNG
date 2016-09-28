@@ -2,10 +2,6 @@ import { Component } from '@angular/core';
 
 @Component({
     selector: 'my-app',
-    template:`
-     <div width="100%">
-    <datatable-demo></datatable-demo>
-    </div>
-    `
+    templateUrl:'app/app.component.html'
 })
 export class AppComponent { }

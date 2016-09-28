@@ -6,19 +6,16 @@ import {CarService} from './car.service';
 
 @Component({
     selector:'datatable-demo',
-    template:`
-    <p-dataTable [value]="cars">
-    <p-column field="vin" header="Vin"></p-column>
-    <p-column field="year" header="Year"></p-column>
-    <p-column field="brand" header="Brand"></p-column>
-    <p-column field="color" header="Color"></p-column>
-</p-dataTable>
-    `
+    templateUrl:'app/datatable-demo.html'
+   
 })
 
 export class DataTableDemo implements OnInit{
 
     cars:Car[];
+    items: MenuItem[];
+    selectedCar:Car;
+
 
     constructor(private carservice :CarService)
     {
@@ -27,6 +24,27 @@ export class DataTableDemo implements OnInit{
 
     ngOnInit(){
         this.carservice.getCarsSmall().then(cars=>this.cars=cars);
+
+        this.items = [
+            {label:'View', command:(event:any)=>this.viewCar(this.selectedCar)},
+            {label:'View', command:(event:any)=>this.deleteCar(this.selectedCar)}
+        ];
     }
+
+    viewCar(car:Car)
+    {
+        
+
+    }
+
+    deleteCar(car:Car)
+    {
+
+    }
+}
+
+export class MenuItem{
+    label:any;
+    command:any;
 }
 

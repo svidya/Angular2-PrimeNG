@@ -13,7 +13,14 @@ constructor(private http: Http){
 }
 
 getCarsSmall(){
-    return this.http.get('./cars-small.json')
+    return this.http.get('app/cars-small.json')
+            .toPromise()
+            .then(res => <Car[]> res.json().data)
+            .then(data => { return data; });
+}
+
+getCarsVerySmall(){
+     return this.http.get('app/cars-lil.json')
             .toPromise()
             .then(res => <Car[]> res.json().data)
             .then(data => { return data; });
