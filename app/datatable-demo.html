@@ -2,7 +2,7 @@
     <i class="fa fa-search" style="float:left;margin:4px 4px 0 0"></i>
     <input #gb type="text" pInputText size="50" style="float:left" placeholder="Filter">
 </div>
-<p-dataTable [value]="cars" [paginator]="true" [rows]="20" [responsive]="true" [globalFilter]="gb" selectionMode="single" [(selection)]="selectedCar" [contextMenu]="cm">
+<p-dataTable [value]="cars" [paginator]="true" [rows]="20" [responsive]="true" [globalFilter]="gb" selectionMode="single" [(selection)]="selectedCar" >
     <header>List of Cars</header>
     <p-column field="vin" header="Vin (starswith)" [sortable]="true" [filter]="true"></p-column>
     <p-column field="year" header="Year (contains)" [sortable]="true" [filter]="true" filterMatchMode="contains"></p-column>
@@ -10,4 +10,4 @@
     <p-column field="color" header="Color (endswith)" [sortable]="true" [filter]="true" filterMatchMode="endsWith"></p-column>
 </p-dataTable>
 
-<p-contextMenu #cm [model]="items"></p-contextMenu>
+<!--<p-contextMenu #cm [model]="items"></p-contextMenu>-->

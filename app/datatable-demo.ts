@@ -1,5 +1,7 @@
 import {Component,OnInit} from '@angular/core';
 
+
+import {MenuItem} from 'primeng/primeng';
 import {Car} from  './car';
 import {CarService} from './car.service';
 
@@ -27,7 +29,7 @@ export class DataTableDemo implements OnInit{
 
         this.items = [
             {label:'View', command:(event:any)=>this.viewCar(this.selectedCar)},
-            {label:'View', command:(event:any)=>this.deleteCar(this.selectedCar)}
+            {label:'Delete', command:(event:any)=>this.deleteCar(this.selectedCar)}
         ];
     }
 
@@ -43,8 +45,4 @@ export class DataTableDemo implements OnInit{
     }
 }
 
-export class MenuItem{
-    label:any;
-    command:any;
-}
 

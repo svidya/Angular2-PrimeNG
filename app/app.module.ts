@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule } from '@angular/http';
 import { FormsModule } from '@angular/forms';
+//import { Routes, RouterModule } from '@angular/router';
 
 import { DataTableModule } from 'primeng/primeng';
 import { DialogModule } from 'primeng/primeng';
-import { ContextMenuModule } from 'primeng/primeng';
+import { ContextMenuModule,MenuItem } from 'primeng/primeng';
+import { MenuModule } from 'primeng/primeng';
 
 
 import { AppComponent } from './app.component';
@@ -20,9 +22,12 @@ import { DataTableCrud } from './datatable-crud';
     BrowserModule,
     HttpModule,
     FormsModule,
+   // RouterModule,    
     DataTableModule,
     DialogModule,
-    ContextMenuModule],
+    ContextMenuModule,
+    MenuModule
+    ],
   declarations: [
     AppComponent,
     DataTableDemo,
